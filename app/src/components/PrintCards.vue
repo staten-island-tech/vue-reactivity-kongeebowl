@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-wrap items-center justify-around m-auto">
+  <div class="container flex flex-wrap items-center justify-around m-auto mr-64">
     <DrugCards v-for="drug in legalDrugs" :key="drug.name" :drug="drug" />
   </div>
 </template>
@@ -68,6 +68,13 @@ const legalDrugs = [
       'https://s.france24.com/media/display/ebf8c7d0-83b6-11ec-ba33-005056bf30b7/w:1280/p:1x1/2022-02-01T170143Z_327640610_RC25BS9UEAQE_RTRMADP_3_USA-OPIOIDS-LITIGATION.jpg',
   },
   {
+    name: 'Ozempic',
+    price: 1139.99,
+    function: 'maks you less big',
+    image:
+      'https://ipro.blob.core.windows.net/images/_ozempic-single-dose-1mg-insulin-1x1-20221221042022.jpg',
+  },
+  {
     name: 'Fluconazole',
     price: 15.99,
     function: 'Antifungal, treats yeast infections',
@@ -85,7 +92,7 @@ const legalDrugs = [
     price: 7.99,
     function: 'Antacid, reduces stomach acid',
     image:
-      'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202412/no-plans-to-ban-ranitidine-in-the-country-190925408-1x1.jpg?VersionId=0KZOg3Z1k7o56fvQ9lKnzKmJyVR8e9Q6',
+      'https://image.made-in-china.com/2f0j00OBjWADhPnfGr/Ranitidine-Hydrochloride-Injection-50mg-2ml-5AMPS-box-.webp',
   },
   {
     name: 'Loperamide',
@@ -112,13 +119,6 @@ const legalDrugs = [
     price: 9.49,
     function: 'Boosts immune system',
     image: 'https://images-na.ssl-images-amazon.com/images/I/81XLa-xxsAL._AC_UL600_SR600,600_.jpg',
-  },
-  {
-    name: 'Ozempic',
-    price: 1139.99,
-    function: 'maks you less big',
-    image:
-      'https://ipro.blob.core.windows.net/images/_ozempic-single-dose-1mg-insulin-1x1-20221221042022.jpg',
   },
   {
     name: 'Ciprofloxacin',
