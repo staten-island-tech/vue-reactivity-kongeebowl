@@ -7,9 +7,8 @@
     <h3 class="text-xl text-black">{{ drug.function }}</h3>
     <h3 class="text-xl text-black">${{ drug.price }}</h3>
     <button
-      @click="cart.push(drug)"
-      class="text-center text-black bg-white rounded-xl w-[30%] border-black border-2 transition-transform duration-300 hover:scale-110 m-2"
-      :id="drug.id"
+      @click="this.cart.push(drug)"
+      class="text-center text-black bg-white rounded-xl w-[30%] border-black border-2 transition-transform duration-300"
     >
       Add to Cart
     </button>
@@ -17,11 +16,14 @@
 </template>
 
 <script setup>
+import { provide, reactive } from 'vue'
+
 defineProps({
   drug: Object,
 })
 
-const cart = []
+const cart = reactive({})
+provide('cart', cart)
 </script>
 
 <style scoped></style>
