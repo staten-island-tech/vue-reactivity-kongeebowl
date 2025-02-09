@@ -7,7 +7,7 @@
     <h3 class="text-xl text-black">{{ drug.function }}</h3>
     <h3 class="text-xl text-black">${{ drug.price }}</h3>
     <button
-      @click="this.cart.push(drug)"
+      @click="store.cart.push(drug)"
       class="text-center text-black bg-white rounded-xl w-[30%] border-black border-2 transition-transform duration-300"
     >
       Add to Cart
@@ -16,14 +16,13 @@
 </template>
 
 <script setup>
-import { provide, reactive } from 'vue'
+import { inject } from 'vue'
 
 defineProps({
   drug: Object,
 })
 
-const cart = reactive({})
-provide('cart', cart)
+const store = inject('store')
 </script>
 
 <style scoped></style>
