@@ -10,9 +10,8 @@
 </template>
 
 <script setup>
-defineProps({
-  cdrug: Object,
-})
+const cdrug = defineProps(['cdrug'])
+console.log(cdrug)
 </script>
 
 <style scoped></style>
