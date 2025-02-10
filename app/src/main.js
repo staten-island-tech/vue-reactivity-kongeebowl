@@ -1,8 +1,9 @@
+import './assets/main.css'
 import { createApp, reactive, provide } from 'vue'
 import App from './App.vue'
 
 const store = reactive({
-  cart: {},
+  cart: [],
 })
 
 const app = createApp(App)
