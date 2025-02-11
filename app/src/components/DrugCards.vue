@@ -16,13 +16,11 @@
 </template>
 
 <script setup>
-import { inject } from 'vue'
+import { store } from '@/arrays/store'
 
 defineProps({
   drug: Object,
 })
-
-const store = inject('store')
 </script>
 
 <style scoped></style>
