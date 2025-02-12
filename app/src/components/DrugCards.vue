@@ -7,7 +7,7 @@
     <h3 class="text-xl text-black">{{ drug.function }}</h3>
     <h3 class="text-xl text-black">${{ drug.price }}</h3>
     <button
-      @click="store.cart.push(drug)"
+      @click="addCard(drug)"
       class="text-center text-black bg-white rounded-xl w-[30%] border-black border-2 transition-transform duration-300"
     >
       Add to Cart
@@ -21,6 +21,16 @@ import { store } from '@/arrays/store'
 defineProps({
   drug: Object,
 })
+
+function addCard(drug) {
+  const existingDrug = store.cart.find((a) => a.id === drug.id)
+
+  if (existingDrug) {
+    existingDrug.quantity++
+  } else {
+    store.cart.push({ ...drug, quantity: 1 })
+  }
+}
 </script>
 
 <style scoped></style>

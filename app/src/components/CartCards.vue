@@ -5,14 +5,18 @@
     <h2 class="card-title text-base text-black font-semibold">{{ cdrug.name }}</h2>
     <h3 class="text-sm text-black">{{ cdrug.function }}</h3>
     <h3 class="text-sm text-black font-semibold">${{ cdrug.price }}</h3>
+    <h3 class="text-sm text-black font-semibold">Quantity: {{ cdrug.quantity }}</h3>
     <div class="flex gap-x-2">
       <button
-        @click=""
+        @click="addDuplicate(cdrug)"
         class="text-center text-black bg-white rounded-xl w-10 border-black border-2"
       >
         +
       </button>
-      <button class="text-center text-black bg-white rounded-xl w-10 border-black border-2">
+      <button
+        @click="remove(cdrug)"
+        class="text-center text-black bg-white rounded-xl w-10 border-black border-2"
+      >
         -
       </button>
     </div>
@@ -20,13 +24,27 @@
 </template>
 
 <script setup>
+import { store } from '@/arrays/store'
+
 defineProps({
   cdrug: Object,
 })
 
-function addDuplicate() {
-  if (store.cart.includes(cdrug)) {
-    store.cart.push(cdrug)
+function addDuplicate(drug) {
+  drug.quantity++
+}
+
+function remove(drug) {
+  const existingDrug = store.cart.find((newDrug) => newDrug.id === drug.id)
+  if (existingDrug) {
+    if (existingDrug.quantity > 1) {
+      existingDrug.quantity--
+    } else {
+      const index = store.cart.findIndex((obj) => obj.id === drug.id)
+      if (index > -1) {
+        store.cart.splice(index, 1)
+      }
+    }
   }
 }
 </script>
