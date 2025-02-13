@@ -28,7 +28,7 @@ function addCard(drug) {
   if (existingDrug) {
     existingDrug.quantity++
   } else {
-    store.cart.push({ ...drug })
+    store.cart.push(drug)
   }
 }
 </script>
