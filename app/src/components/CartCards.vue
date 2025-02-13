@@ -8,16 +8,16 @@
     <h3 class="text-sm text-black font-semibold">Quantity: {{ cdrug.quantity }}</h3>
     <div class="flex gap-x-2">
       <button
-        @click="addDuplicate(cdrug)"
-        class="text-center text-black bg-white rounded-xl w-10 border-black border-2"
-      >
-        +
-      </button>
-      <button
         @click="remove(cdrug)"
         class="text-center text-black bg-white rounded-xl w-10 border-black border-2"
       >
         -
+      </button>
+      <button
+        @click="addDuplicate(cdrug)"
+        class="text-center text-black bg-white rounded-xl w-10 border-black border-2"
+      >
+        +
       </button>
     </div>
   </div>
