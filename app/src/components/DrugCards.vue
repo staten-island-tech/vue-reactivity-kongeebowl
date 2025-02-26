@@ -23,7 +23,7 @@ defineProps({
 })
 
 function addCard(drug) {
-  const existingDrug = store.cart.find((a) => a.id === drug.id)
+  const existingDrug = store.cart.find((cartDrug) => cartDrug.id === drug.id)
 
   if (existingDrug) {
     existingDrug.quantity++
